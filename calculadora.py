@@ -1,29 +1,38 @@
-def calculadora():
-    while True:
-        print("\n=== Calculadora Simples ===")
-        operacao = input("Escolha a operação (+, -, *, /) ou 'sair' para encerrar: ")
+# Calculadora simples em Python
 
-        if operacao.lower() == 'sair':
-            print("Encerrando a calculadora. Até logo!")
-            break
+# Exibe as opções
+print("Selecione a operação desejada:")
+print("1 - Soma")
+print("2 - Subtração")
+print("3 - Multiplicação")
+print("4 - Divisão")
 
-        num1 = float(input("Digite o primeiro número: "))
-        num2 = float(input("Digite o segundo número: "))
+# Recebe a escolha do usuário
+opcao = input("Digite o número da operação (1/2/3/4): ")
 
-        if operacao == '+':
-            resultado = num1 + num2
-        elif operacao == '-':
-            resultado = num1 - num2
-        elif operacao == '*':
-            resultado = num1 * num2
-        elif operacao == '/':
-            if num2 != 0:
-                resultado = num1 / num2
-            else:
-                print("Erro: divisão por zero não é permitida.")
-                continue
-        else:
-            print("Operação inválida.")
-            continue
+# Recebe os números
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
 
-        print(f"Resultado: {resultado}")
+# Realiza a operação escolhida
+if opcao == '1':
+    resultado = num1 + num2
+    print(f"Resultado: {num1} + {num2} = {resultado}")
+
+elif opcao == '2':
+    resultado = num1 - num2
+    print(f"Resultado: {num1} - {num2} = {resultado}")
+
+elif opcao == '3':
+    resultado = num1 * num2
+    print(f"Resultado: {num1} × {num2} = {resultado}")
+
+elif opcao == '4':
+    if num2 != 0:
+        resultado = num1 / num2
+        print(f"Resultado: {num1} ÷ {num2} = {resultado}")
+    else:
+        print("Erro: divisão por zero não é permitida!")
+
+else:
+    print("Opção inválida!")
